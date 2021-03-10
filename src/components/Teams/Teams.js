@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import Header from '../Header/Header';
 import TeamCard from '../TeamCard/TeamCard';
 
 const Teams = () => {
@@ -15,15 +16,22 @@ const Teams = () => {
     }, []);
 
     return (
-        <Container>
-            <Row className="mt-3">
-                {teams.map((team) => (
-                    <Col md={4} sm={6} className="my-3" key={team.idTeam}>
-                        <TeamCard team={team} />
-                    </Col>
-                ))}
-            </Row>
-        </Container>
+        <>
+            <Header>
+                <h1 className="main-headding text-white">
+                    AFC Champions Teams
+                </h1>
+            </Header>
+            <Container>
+                <Row className="mt-3">
+                    {teams.map((team) => (
+                        <Col md={4} sm={6} className="my-3" key={team.idTeam}>
+                            <TeamCard team={team} />
+                        </Col>
+                    ))}
+                </Row>
+            </Container>
+        </>
     );
 };
 

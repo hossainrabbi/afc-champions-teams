@@ -1,21 +1,23 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Header from './components/Header/Header';
 import Teams from './components/Teams/Teams';
 import TeamDetails from './components/TeamDetails/TeamDetails';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import NotFound from './components/NotFound/NotFound';
 
 const App = () => {
     return (
         <Router>
-            <Header />
             <Switch>
                 <Route exact path="/">
                     <Teams />
                 </Route>
-                <Route path="/team/:teamId">
+                <Route exact path="/team/:teamId">
                     <TeamDetails />
+                </Route>
+                <Route path="*">
+                    <NotFound />
                 </Route>
             </Switch>
         </Router>

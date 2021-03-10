@@ -10,6 +10,7 @@ import {
 import maleTeam from '../../images/male.png';
 import femaleTeam from '../../images/female.png';
 import './TeamDetails.css';
+import Header from '../Header/Header';
 
 const TeamDetails = () => {
     const { teamId } = useParams();
@@ -24,6 +25,7 @@ const TeamDetails = () => {
     }, [teamId]);
 
     const {
+        strTeamBadge,
         strTeam,
         intFormedYear,
         strCountry,
@@ -44,33 +46,45 @@ const TeamDetails = () => {
         );
 
     return (
-        <Container className="TeamDetails">
-            <Row className="teamContent py-3 my-3">
-                <Col md={6}>
-                    <h3>{strTeam}</h3>
-                    <ul>
-                        <li>Founded: {intFormedYear}</li>
-                        <li>Country: {strCountry}</li>
-                        <li>Sport Type: {strSport}</li>
-                        <li>Gender: {strGender}</li>
-                    </ul>
-                </Col>
-                <Col md={6}>{teamImg}</Col>
-            </Row>
-            <p>{strStadiumDescription}</p>
-            <p>{strDescriptionEN}</p>
-            <div className="social-icons">
-                <a href={strTwitter} style={{ backgroundColor: '#1DA1F2' }}>
-                    <FontAwesomeIcon icon={faTwitter} />
-                </a>
-                <a href={strYoutube} style={{ backgroundColor: '#F70000' }}>
-                    <FontAwesomeIcon icon={faYoutube} />
-                </a>
-                <a href={strFacebook} style={{ backgroundColor: '#026BE4' }}>
-                    <FontAwesomeIcon icon={faFacebookF} />
-                </a>
-            </div>
-        </Container>
+        <div className="TeamDetails">
+            <Header>
+                <img
+                    src={strTeamBadge}
+                    alt="Team Logo"
+                    className="main-headding"
+                />
+            </Header>
+            <Container>
+                <Row className="teamContent py-3 my-3">
+                    <Col md={6}>
+                        <h3>{strTeam}</h3>
+                        <ul>
+                            <li>Founded: {intFormedYear}</li>
+                            <li>Country: {strCountry}</li>
+                            <li>Sport Type: {strSport}</li>
+                            <li>Gender: {strGender}</li>
+                        </ul>
+                    </Col>
+                    <Col md={6}>{teamImg}</Col>
+                </Row>
+                <p>{strStadiumDescription}</p>
+                <p>{strDescriptionEN}</p>
+                <div className="social-icons">
+                    <a href={strTwitter} style={{ backgroundColor: '#1DA1F2' }}>
+                        <FontAwesomeIcon icon={faTwitter} />
+                    </a>
+                    <a href={strYoutube} style={{ backgroundColor: '#F70000' }}>
+                        <FontAwesomeIcon icon={faYoutube} />
+                    </a>
+                    <a
+                        href={strFacebook}
+                        style={{ backgroundColor: '#026BE4' }}
+                    >
+                        <FontAwesomeIcon icon={faFacebookF} />
+                    </a>
+                </div>
+            </Container>
+        </div>
     );
 };
 
