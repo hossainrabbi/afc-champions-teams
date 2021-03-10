@@ -19,7 +19,7 @@ const Teams = () => {
         <>
             <Header>
                 <h1 className="main-headding text-white">
-                    AFC Champions Teams
+                    AFC Champions League Teams
                 </h1>
             </Header>
             <Container>

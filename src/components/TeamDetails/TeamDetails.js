@@ -7,18 +7,17 @@ import {
     faTwitter,
     faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
+import {
+    faClock,
+    faFlag,
+    faMars,
+    faRunning,
+} from '@fortawesome/free-solid-svg-icons';
 import maleTeam from '../../images/male.png';
 import femaleTeam from '../../images/female.png';
 import './TeamDetails.css';
 import Header from '../Header/Header';
-import {
-    faClock,
-    faFlag,
-    faMapMarkedAlt,
-    faMapMarkerAlt,
-    faMars,
-    faRunning,
-} from '@fortawesome/free-solid-svg-icons';
+import SocialIcon from '../SocialIcon/SocialIcon';
 
 const TeamDetails = () => {
     const { teamId } = useParams();
@@ -89,25 +88,25 @@ const TeamDetails = () => {
                 </Row>
                 <p>{strStadiumDescription}</p>
                 <p>{strDescriptionEN}</p>
-                <div className="social-icons">
-                    <a
-                        href={`https://${strTwitter}`}
-                        style={{ backgroundColor: '#1DA1F2' }}
-                    >
-                        <FontAwesomeIcon icon={faTwitter} />
-                    </a>
-                    <a
-                        href={`https://${strYoutube}`}
-                        style={{ backgroundColor: '#F70000' }}
-                    >
-                        <FontAwesomeIcon icon={faYoutube} />
-                    </a>
-                    <a
-                        href={`https://${strFacebook}`}
-                        style={{ backgroundColor: '#026BE4' }}
-                    >
-                        <FontAwesomeIcon icon={faFacebookF} />
-                    </a>
+                <div className="social">
+                    <SocialIcon
+                        mainLink={strTwitter}
+                        link="https://twitter.com"
+                        icon={faTwitter}
+                        bgColor="#1DA1F2"
+                    />
+                    <SocialIcon
+                        mainLink={strYoutube}
+                        link="https://www.youtube.com"
+                        icon={faYoutube}
+                        bgColor="#F70000"
+                    />
+                    <SocialIcon
+                        mainLink={strFacebook}
+                        link="https://www.facebook.com"
+                        icon={faFacebookF}
+                        bgColor="#026BE4"
+                    />
                 </div>
             </Container>
         </div>
