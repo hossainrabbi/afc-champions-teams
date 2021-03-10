@@ -11,6 +11,14 @@ import maleTeam from '../../images/male.png';
 import femaleTeam from '../../images/female.png';
 import './TeamDetails.css';
 import Header from '../Header/Header';
+import {
+    faClock,
+    faFlag,
+    faMapMarkedAlt,
+    faMapMarkerAlt,
+    faMars,
+    faRunning,
+} from '@fortawesome/free-solid-svg-icons';
 
 const TeamDetails = () => {
     const { teamId } = useParams();
@@ -59,10 +67,22 @@ const TeamDetails = () => {
                     <Col md={6}>
                         <h3>{strTeam}</h3>
                         <ul>
-                            <li>Founded: {intFormedYear}</li>
-                            <li>Country: {strCountry}</li>
-                            <li>Sport Type: {strSport}</li>
-                            <li>Gender: {strGender}</li>
+                            <li>
+                                <FontAwesomeIcon icon={faClock} /> Founded:{' '}
+                                {intFormedYear}
+                            </li>
+                            <li>
+                                <FontAwesomeIcon icon={faFlag} /> Country:{' '}
+                                {strCountry}
+                            </li>
+                            <li>
+                                <FontAwesomeIcon icon={faRunning} /> Sport Type:{' '}
+                                {strSport}
+                            </li>
+                            <li>
+                                <FontAwesomeIcon icon={faMars} /> Gender:{' '}
+                                {strGender}
+                            </li>
                         </ul>
                     </Col>
                     <Col md={6}>{teamImg}</Col>
@@ -70,14 +90,20 @@ const TeamDetails = () => {
                 <p>{strStadiumDescription}</p>
                 <p>{strDescriptionEN}</p>
                 <div className="social-icons">
-                    <a href={strTwitter} style={{ backgroundColor: '#1DA1F2' }}>
+                    <a
+                        href={`https://${strTwitter}`}
+                        style={{ backgroundColor: '#1DA1F2' }}
+                    >
                         <FontAwesomeIcon icon={faTwitter} />
                     </a>
-                    <a href={strYoutube} style={{ backgroundColor: '#F70000' }}>
+                    <a
+                        href={`https://${strYoutube}`}
+                        style={{ backgroundColor: '#F70000' }}
+                    >
                         <FontAwesomeIcon icon={faYoutube} />
                     </a>
                     <a
-                        href={strFacebook}
+                        href={`https://${strFacebook}`}
                         style={{ backgroundColor: '#026BE4' }}
                     >
                         <FontAwesomeIcon icon={faFacebookF} />
