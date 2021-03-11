@@ -2,7 +2,11 @@
     height: 60%;
 }
 
-.TeamDetails .teamContent {
+.TeamDetails .banner-img {
+    width: 100%;
+}
+
+.team-content-area {
     color: #ffffff;
     background: linear-gradient(
         90deg,
@@ -10,12 +14,22 @@
         rgb(10, 65, 184) 33%,
         rgba(0, 212, 255, 1) 100%
     );
+}
+.TeamDetails .team-content {
     align-items: center;
-    border-radius: 15px;
     letter-spacing: 1.2px;
 }
 
 .TeamDetails .social {
     text-align: center;
     padding: 20px 0;
+}
+
+@media (max-width: 767px) {
+    .TeamDetails .team-content {
+        text-align: center;
+    }
+    .TeamDetails .team-content .col-md-6:nth-child(1) {
+        margin-bottom: 20px;
+    }
 }

@@ -18,6 +18,7 @@ import femaleTeam from '../../images/female.png';
 import './TeamDetails.css';
 import Header from '../Header/Header';
 import SocialIcon from '../SocialIcon/SocialIcon';
+import NavbarManu from '../NavbarManu/NavbarManu';
 
 const TeamDetails = () => {
     const { teamId } = useParams();
@@ -33,6 +34,7 @@ const TeamDetails = () => {
 
     const {
         strTeamBadge,
+        strTeamBanner,
         strTeam,
         intFormedYear,
         strCountry,
@@ -54,38 +56,51 @@ const TeamDetails = () => {
 
     return (
         <div className="TeamDetails">
-            <Header>
+            <NavbarManu />
+            {strTeamBanner ? (
                 <img
-                    src={strTeamBadge}
-                    alt="Team Logo"
-                    className="main-headding"
+                    src={strTeamBanner}
+                    alt="Banner-img"
+                    className="banner-img"
                 />
-            </Header>
+            ) : (
+                <Header>
+                    <img
+                        src={strTeamBadge}
+                        alt="Team Logo"
+                        className="main-headding"
+                    />
+                </Header>
+            )}
+            <div className="team-content-area">
+                <Container>
+                    <Row className="team-content py-3 my-4">
+                        <Col md={6}>
+                            <h3>{strTeam}</h3>
+                            <ul>
+                                <li>
+                                    <FontAwesomeIcon icon={faClock} /> Founded:{' '}
+                                    {intFormedYear}
+                                </li>
+                                <li>
+                                    <FontAwesomeIcon icon={faFlag} /> Country:{' '}
+                                    {strCountry}
+                                </li>
+                                <li>
+                                    <FontAwesomeIcon icon={faRunning} /> Sport
+                                    Type: {strSport}
+                                </li>
+                                <li>
+                                    <FontAwesomeIcon icon={faMars} /> Gender:{' '}
+                                    {strGender}
+                                </li>
+                            </ul>
+                        </Col>
+                        <Col md={6}>{teamImg}</Col>
+                    </Row>
+                </Container>
+            </div>
             <Container>
-                <Row className="teamContent py-3 my-3">
-                    <Col md={6}>
-                        <h3>{strTeam}</h3>
-                        <ul>
-                            <li>
-                                <FontAwesomeIcon icon={faClock} /> Founded:{' '}
-                                {intFormedYear}
-                            </li>
-                            <li>
-                                <FontAwesomeIcon icon={faFlag} /> Country:{' '}
-                                {strCountry}
-                            </li>
-                            <li>
-                                <FontAwesomeIcon icon={faRunning} /> Sport Type:{' '}
-                                {strSport}
-                            </li>
-                            <li>
-                                <FontAwesomeIcon icon={faMars} /> Gender:{' '}
-                                {strGender}
-                            </li>
-                        </ul>
-                    </Col>
-                    <Col md={6}>{teamImg}</Col>
-                </Row>
                 <p>{strStadiumDescription}</p>
                 <p>{strDescriptionEN}</p>
                 <div className="social">

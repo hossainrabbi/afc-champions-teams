@@ -13,6 +13,9 @@ const App = () => {
                 <Route exact path="/">
                     <Teams />
                 </Route>
+                <Route path="/teams">
+                    <Teams />
+                </Route>
                 <Route path="/team/:teamId">
                     <TeamDetails />
                 </Route>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import Header from '../Header/Header';
 import TeamCard from '../TeamCard/TeamCard';
+import NavbarManu from '../NavbarManu/NavbarManu';
 
 const Teams = () => {
     const [teams, setTeams] = useState([]);
@@ -17,6 +18,7 @@ const Teams = () => {
 
     return (
         <>
+            <NavbarManu />
             <Header>
                 <h1 className="main-headding text-white">
                     AFC Champions League Teams
