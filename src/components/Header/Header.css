@@ -4,7 +4,14 @@
     background-position: bottom center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 300px;
+    height: 400px;
+    min-height: 300px;
     text-align: center;
     position: relative;
+}
+
+@media (max-width: 767px) {
+    .Header {
+        height: 300px;
+    }
 }

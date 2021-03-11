@@ -18,7 +18,6 @@ import femaleTeam from '../../images/female.png';
 import './TeamDetails.css';
 import Header from '../Header/Header';
 import SocialIcon from '../SocialIcon/SocialIcon';
-import NavbarManu from '../NavbarManu/NavbarManu';
 
 const TeamDetails = () => {
     const { teamId } = useParams();
@@ -56,7 +55,6 @@ const TeamDetails = () => {
 
     return (
         <div className="TeamDetails">
-            <NavbarManu />
             {strTeamBanner ? (
                 <img
                     src={strTeamBanner}
